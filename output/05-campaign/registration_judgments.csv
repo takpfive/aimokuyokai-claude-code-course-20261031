@@ -1,0 +1,9 @@
+﻿registration_id,recipient_id,status,last_click_send_id,in_delivered_population,attribution,attributed_variant,judgment
+J01,U01,active,S01,yes,direct,A,有効申込・直接帰属(S01)
+J02,U02,active,S02,yes,direct,A,有効申込・直接帰属(S02)
+J03,U11,active,S11,yes,direct,B,有効申込・直接帰属(S11)
+J04,U12,active,S12,yes,direct,B,有効申込・直接帰属(S12)
+J05,U13,cancelled,S13,yes,,,除外: status=cancelled
+J06,U14,active,,yes,unattributed,,有効申込・未帰属(last_click_send_id空欄)
+J07,U99,active,,no,unattributed,,有効申込・未帰属(last_click_send_id空欄)
+J08,U01,active,S01,yes,,,除外: J01と同一recipient_idの重複

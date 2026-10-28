@@ -1,0 +1,10 @@
+﻿id,time,source,action,evidence,state
+E01,09:00,calendar,研修企画会議,予定が登録されている,scheduled
+E02,09:35,file,研修構成を保存,outline-v2.md を保存,saved
+E03,10:05,mail,案内メールを作成,下書きに保存,draft
+E04,10:30,github,問い合わせアプリを修正,ローカルのテストが通過,tested
+E05,11:00,browser,本番の画面を開いた,ログイン画面のみ確認,viewed
+E06,13:10,file,比較調査を開始,3社の情報を途中まで収集,in_progress
+E07,14:00,file,資料を完成,training.pptx が保存され全ページ目視済み,verified
+E08,15:20,mail,資料を送信,架空メールの送信済み記録,sent
+E09,16:00,memo,次の対応,案内メールは未送信。比較表の欠落を確認する,todo

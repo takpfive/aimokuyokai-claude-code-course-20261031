@@ -1,0 +1,6 @@
+﻿po_id,vendor_id,po_qty,po_unit_yen,received_qty,receipt_ids,invoice_ids,invoiced_qty_total,judgment,note
+P01,V01,100,1000,100,G01,I01/I05,200,要確認,要確認の請求: I01/I05
+P02,V02,50,2000,30,G02,I02,50,要確認,要確認の請求: I02
+P03,V03,10,10000,10,G03,I03,10,要確認,要確認の請求: I03
+P04,V04,20,3000,20,G04,I04,20,一致,紐づく請求はすべて一致
+P05,V05,2,50000,0,,I06,2,要確認,要確認の請求: I06

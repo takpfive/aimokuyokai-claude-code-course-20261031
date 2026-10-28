@@ -1,0 +1,7 @@
+元パス,新パス,SHA-256,判定,理由
+starter/01-folder/inbox/2026-10-01_見積_そら商事.txt,output/01-folder/見積書/2026-10-01_見積書_そら商事セミナー.txt,b15dfe0fd50b118cc28c434ca01d84a08885056a0f85b3e650bd761ed244a34a,移動可,本文 書類種別:見積書／案件:そら商事 セミナー／日付:2026-10-01。重複組の正本
+starter/01-folder/inbox/見積_そら商事_コピー.txt,output/01-folder/重複/見積_そら商事_コピー.txt,b15dfe0fd50b118cc28c434ca01d84a08885056a0f85b3e650bd761ed244a34a,重複,SHA-256が inbox/2026-10-01_見積_そら商事.txt と一致。削除せず元の名前で保管
+starter/01-folder/inbox/請求書_つき企画.txt,output/01-folder/請求書/2026-10-05_請求書_つき企画勉強会.txt,e860bb23ff80b858ef0ca26785c31fc716d98c2b1a5c043ba4e182a875b35a72,移動可,本文 書類種別:請求書／案件:つき企画 勉強会／日付:2026-10-05
+starter/01-folder/inbox/議事メモ_1008.txt,output/01-folder/議事録/2026-10-08_議事録_そら商事セミナー.txt,505bf9e56b500c3581dc669fb053bf277ba20d5739114c9172068502a9f99b35,移動可,本文 書類種別:議事録／案件:そら商事 セミナー／日付:2026-10-08
+starter/01-folder/inbox/20261012_研修案.txt,output/01-folder/企画書/2026-10-12_企画書_つき企画勉強会.txt,ce5a763ca3e5ee71ba4ab83c220d25c3adc2e39ab891aec765ac4effad7af567,移動可,本文 書類種別:企画書／案件:つき企画 勉強会／日付:2026-10-12。ファイル名「研修案」は表記の違いと判断
+starter/01-folder/inbox/メモ_日付不明.txt,output/01-folder/要確認/メモ_日付不明.txt,370677b0b3c52d1b4aa5a77486e630fcd5618e0dd754894e4cd3e4c4eb699474,要確認,本文 案件:不明／日付:不明。推測で埋めず元の名前で保管

@@ -1,0 +1,7 @@
+# 集計定義
+配信母数はdelivered=trueのユニークrecipient_id。クリックの単純件数とhumanのユニーク人数を区別。
+申込はrecipient_idで重複排除、activeのみ。last_click_send_idがあるものだけA/Bへ直接帰属。
+空欄は未帰属とし、同じ人にメールが届いていても勝手に帰属させない。
+unknownのクリックはhumanとみなさない。campaign全体とvariant別を別に報告。
+小標本・無作為割付の証拠なし。因果効果や統計的な勝者は断定できない。
+金額やCVRを計算するとき、分母・除外・行IDを残す。

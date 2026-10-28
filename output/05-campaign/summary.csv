@@ -1,0 +1,4 @@
+﻿scope,delivered_unique,raw_clicks,human_clicks,human_unique_clickers,human_unique_click_rate,direct_registrations,direct_cvr,unattributed_registrations
+全体,20,13,6,5,5/20=25.0%,4,4/20=20.0%,2
+variant A,10,9,3,2,2/10=20.0%,2,2/10=20.0%,variant別には配分しない
+variant B,10,4,3,3,3/10=30.0%,2,2/10=20.0%,variant別には配分しない

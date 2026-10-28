@@ -1,0 +1,47 @@
+[
+  {
+    "tool": "Agent",
+    "name": "ops-reviewer",
+    "description": "運用担当の調査"
+  },
+  {
+    "tool": "Agent",
+    "name": "cost-reviewer",
+    "description": "費用担当の調査"
+  },
+  {
+    "tool": "ListAgents",
+    "name": "全担当",
+    "description": ""
+  },
+  {
+    "tool": "ListAgents",
+    "name": "全担当",
+    "description": ""
+  },
+  {
+    "tool": "SendMessage",
+    "name": "ops-reviewer",
+    "description": ""
+  },
+  {
+    "tool": "SendMessage",
+    "name": "cost-reviewer",
+    "description": ""
+  },
+  {
+    "tool": "ListAgents",
+    "name": "全担当",
+    "description": ""
+  },
+  {
+    "tool": "ListAgents",
+    "name": "全担当",
+    "description": ""
+  },
+  {
+    "tool": "ListAgents",
+    "name": "全担当",
+    "description": ""
+  }
+]

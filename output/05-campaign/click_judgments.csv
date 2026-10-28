@@ -1,0 +1,14 @@
+﻿click_id,send_id,recipient_id,variant,classification,in_raw_click_count,counts_as_human_unique,judgment
+C01,S01,U01,A,human,yes,yes,human: 件数に加算、ユニーク人数に算入
+C02,S02,U02,A,human,yes,yes,human: 件数に加算、ユニーク人数に算入
+C03,S02,U02,A,human,yes,no,human: 件数に加算、ユニーク人数に算入
+C04,S03,U03,A,security,yes,no,security: humanではない(総クリック件数のみ)
+C05,S04,U04,A,security,yes,no,security: humanではない(総クリック件数のみ)
+C06,S05,U05,A,security,yes,no,security: humanではない(総クリック件数のみ)
+C07,S06,U06,A,security,yes,no,security: humanではない(総クリック件数のみ)
+C08,S07,U07,A,security,yes,no,security: humanではない(総クリック件数のみ)
+C09,S08,U08,A,security,yes,no,security: humanではない(総クリック件数のみ)
+C10,S11,U11,B,human,yes,yes,human: 件数に加算、ユニーク人数に算入
+C11,S12,U12,B,human,yes,yes,human: 件数に加算、ユニーク人数に算入
+C12,S13,U13,B,human,yes,yes,human: 件数に加算、ユニーク人数に算入
+C13,S14,U14,B,unknown,yes,no,unknown: humanとみなさない(総クリック件数のみ)

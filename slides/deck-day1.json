@@ -1,0 +1,614 @@
+{
+  "theme": "aimokuyokai",
+  "mode": "talk",
+  "title": "Claude Code講座 基礎・実務編",
+  "slides": [
+    {
+      "type": "cover",
+      "event": "AI木曜会 実演講座",
+      "title": "Claude Code講座",
+      "subtitle": "基礎・実務編",
+      "meta": "DAY 1 · 10/31  |  臼井拓水",
+      "notes": "添付のDAY1の9項目を軸にした本編。120分の進行案。上級編は別冊です。検証日は2026-10-29。"
+    },
+    {
+      "type": "say",
+      "text": "今日の仕事をひとつ、\n[[自分のPCで動かす]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "完成物は問い合わせ管理アプリ。フォルダー整理、Skill、外部連携、日報、並列調査は短い実演でつなぎます。"
+    },
+    {
+      "type": "chapter",
+      "title": "本日の流れ",
+      "items": [
+        {
+          "label": "Claude Codeを始める",
+          "time": "20分"
+        },
+        {
+          "label": "手を動かして使ってみる",
+          "time": "40分"
+        },
+        {
+          "label": "業務で活用する",
+          "time": "50分"
+        },
+        {
+          "label": "質問と次の一歩",
+          "time": "10分"
+        }
+      ],
+      "notes": "120分案。導入20分、整理15分、アプリ25分、Skillsと日報20分、MCP15分、並列調査15分、質疑10分。"
+    },
+    {
+      "type": "section",
+      "text": "Claude Codeを始める",
+      "notes": ""
+    },
+    {
+      "type": "section",
+      "text": "ClaudeとClaude Codeの\n使い分け",
+      "notes": "添付の見出しを保持。Claudeにもファイル生成や外部連携があり、境界は絶対ではありません。今回はチャット中心と作業フォルダー中心という入口の違いで説明します。"
+    },
+    {
+      "type": "table",
+      "title": "仕事の入口で使い分ける",
+      "headers": [
+        "入口",
+        "向いている依頼"
+      ],
+      "rows": [
+        [
+          "Claudeのチャット",
+          "相談して、考えを整える"
+        ],
+        [
+          "Claude Code",
+          "フォルダーを読み、作り、確かめる"
+        ]
+      ],
+      "font_size": 25,
+      "notes": "",
+      "source": "S01・S02 / 公式資料を2026-10-29確認"
+    },
+    {
+      "type": "flow",
+      "title": "Claude Codeは、結果を確かめながら進む",
+      "nodes": [
+        {
+          "label": "読む",
+          "tone": ""
+        },
+        {
+          "label": "作業する",
+          "tone": ""
+        },
+        {
+          "label": "確かめる",
+          "tone": "strong"
+        }
+      ],
+      "notes": "AIエージェント＝目的に向かって道具を使いながら作業を続ける仕組み。毎回すべて成功するわけではありません。今回のコピーもハッシュ比較まで行いました。",
+      "source": "S01 / Claude Code Docs"
+    },
+    {
+      "type": "section",
+      "text": "Claude Codeのセットアップ",
+      "notes": ""
+    },
+    {
+      "type": "say",
+      "text": "最初は\n[[DesktopのCodeタブ]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "claude.com/download から公式Desktopを入れる→ログイン→Codeタブ→フォルダー選択。DesktopにはCodeが含まれ、初回講座でターミナルの導入は不要。CLIは並列機能の補足で扱います。",
+      "source": "S02 / Claude Help Center"
+    },
+    {
+      "type": "point",
+      "title": "始める前に、利用環境を確認",
+      "body": "Claude Codeを使える契約\n公式Desktopアプリ\n展開した教材フォルダー",
+      "notes": "価格は記載せず、現行プランを各自確認。2026-10-29確認時の公式案内ではCodeはPro/Max/Team/Enterprise。組織では管理者の許可・機能設定も確認。",
+      "source": "S03 / Claude Help Center"
+    },
+    {
+      "type": "figure",
+      "title": "フォルダーを選んで始める",
+      "image": "../screenshots/setup.png",
+      "notes": "自分のPCを選択し、配布ZIPを展開したフォルダーを選ぶ。選択画面の例は講師のMac。受講者は自分のパスを使う。",
+      "source": "Claude Code実画面・2026-10-29 / 架空教材"
+    },
+    {
+      "type": "say",
+      "text": "最初の作業場所は\n[[教材フォルダーだけ]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "ホームやDownloads全体を選ばず、演習材料を限定。starterは原本、outputが生成先。アプリがローカルファイルを扱っても処理にはオンラインのAIを利用するため、社外秘の持ち込みは社内ルールに従う。"
+    },
+    {
+      "type": "section",
+      "text": "Claude Codeの基本操作",
+      "notes": ""
+    },
+    {
+      "type": "prompt1",
+      "title": "最初に中身を読んでもらう",
+      "text": "このフォルダーの中身と、\nできる演習を教えてください。",
+      "label": "演習用プロンプト",
+      "notes": "演習用。フォルダーの選択を終えてから送信。出力先が違えばここで直す。"
+    },
+    {
+      "type": "table",
+      "title": "依頼には、完成の形を添える",
+      "headers": [
+        "渡すもの",
+        "今回の例"
+      ],
+      "rows": [
+        [
+          "材料",
+          "requests.csv"
+        ],
+        [
+          "完成形",
+          "問い合わせ管理アプリ"
+        ],
+        [
+          "確認方法",
+          "状態を変えて再読込"
+        ]
+      ],
+      "font_size": 25,
+      "notes": "長い万能プロンプトを暗記しません。材料・完成形・確認方法の3点を具体的にする。"
+    },
+    {
+      "type": "figure",
+      "title": "実行前に、内容を読んで許可する",
+      "image": "../screenshots/permission.png",
+      "notes": "実際の読み取りコマンドで出た許可画面。フォルダーとコマンドの意味を確認し、一度だけ許可を選びました。手動モードを利用。",
+      "source": "Claude Code実画面・2026-10-29 / 読み取り許可"
+    },
+    {
+      "type": "say",
+      "text": "意図と違ったら\n[[停止して、直す]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "実行中は停止ボタン。停止しても、済んだファイル変更まで戻るとは限りません。何を変更したか確認してから訂正。会話の巻き戻しと外部操作の取り消しは同じではありません。"
+    },
+    {
+      "type": "say",
+      "text": "別の仕事には\n[[新しいセッション]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "Desktopの新規作成から始め、フォルダーをもう一度確認。CLIでは/clearは会話リセット、/compactは要約による文脈整理。重要な条件はCLAUDE.mdや仕様ファイルへ残す。"
+    },
+    {
+      "type": "section",
+      "text": "手を動かして使ってみる",
+      "notes": ""
+    },
+    {
+      "type": "section",
+      "text": "PC内のフォルダを整理する",
+      "notes": ""
+    },
+    {
+      "type": "say",
+      "text": "整理する前に\n[[整理案を出してもらう]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "演習01。6つのファイルとルールを使用。いきなり移動や削除を依頼しない。重複・日付不明・命名方針を先に確認します。"
+    },
+    {
+      "type": "prompt1",
+      "title": "PC内のフォルダを整理する",
+      "text": "starter/01-folderを読んで、整理案と重複を示してください。まだファイルは変更しないでください。",
+      "label": "実際に送信したプロンプト",
+      "notes": "実際にDesktopへ送信した1回分。出力に「まだ変更しない」が反映されたことまで確認。"
+    },
+    {
+      "type": "figure",
+      "title": "重複と不明点が見つかった",
+      "image": "../screenshots/folder-plan.png",
+      "notes": "SHA-256が同じ見積書は重複1組。不明な日付は推測せず要確認になりました。名前の違いだけで重複と決めていない点を見る。",
+      "source": "Claude Code実画面・2026-10-29 / 架空教材"
+    },
+    {
+      "type": "say",
+      "text": "分からない情報は\n[[「要確認」に残す]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "ファイル名の研修案と本文の企画書は表記差と解釈された。業務では許容する表記差も明示すると判定が安定する。"
+    },
+    {
+      "type": "prompt1",
+      "title": "PC内のフォルダを整理する",
+      "text": "この案でoutput/01-folderへコピーし、対応表を作ってください。元ファイルは残してください。",
+      "label": "実際に送信したプロンプト",
+      "notes": "実際に送信。6原本が残り、6コピーと対応表が作成され、コピー先と元のハッシュが一致。"
+    },
+    {
+      "type": "figure",
+      "title": "コピーと対応表を確認する",
+      "image": "../screenshots/folder-result.png",
+      "notes": "配布CSVを閲覧用ページで表示。対応表は元パス・新パス・ハッシュ・判定・理由。コピーができたという文章だけで終えず、ファイルと件数を照合する。",
+      "source": "Claude Code実画面・2026-10-29 / 架空教材"
+    },
+    {
+      "type": "work",
+      "title": "自分でも整理案を確認する",
+      "steps": [
+        "演習01の最初のプロンプトを送る",
+        "重複と要確認を見つける",
+        "コピー先を確認して実行する"
+      ],
+      "time": "5",
+      "unit": "分",
+      "mode": "個人ワーク",
+      "notes": "5分。原本6つが残れば基本条件クリア。変更前後のファイル数を確認。時間が押したらコピー実行は講師のみ。"
+    },
+    {
+      "type": "section",
+      "text": "自分の業務用アプリを作る",
+      "notes": ""
+    },
+    {
+      "type": "say",
+      "text": "作るのは\n[[問い合わせ管理アプリ]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "実務に近い小さな自分専用ツール。外部公開・ログイン・本番DBを含まない。CSVの8件を検索し、期限と対応状態を管理する。"
+    },
+    {
+      "type": "table",
+      "title": "完成したかを、操作で確かめる",
+      "headers": [
+        "操作",
+        "合格条件"
+      ],
+      "rows": [
+        [
+          "開く",
+          "8件が表示される"
+        ],
+        [
+          "状態を変える",
+          "再読込しても残る"
+        ],
+        [
+          "期限を見る",
+          "未完了の超過は1件"
+        ]
+      ],
+      "font_size": 25,
+      "notes": "starter/02-app/ACCEPTANCE.md。初期未対応5・対応中2・完了1、期限超過R03。基準日は2026-10-29固定。"
+    },
+    {
+      "type": "prompt1",
+      "title": "自分の業務用アプリを作る",
+      "text": "starter/02-app/BRIEF.mdの仕様で、問い合わせ管理アプリを作ってください。完成条件も検証してください。",
+      "label": "実際に送信したプロンプト",
+      "notes": "最初に送信した依頼。この実演では新規セッション提案が出たため拒否し「このセッションで実装・検証」と追記した。講師用ノートには修正プロンプトも残す。"
+    },
+    {
+      "type": "figure",
+      "title": "検証の記録も、ファイルに残る",
+      "image": "../screenshots/app-build.png",
+      "notes": "実際にverification.mdを書き込む許可画面。作成内容と保存先を確認して許可する。",
+      "source": "Claude Code実画面・2026-10-29 / アプリ生成"
+    },
+    {
+      "type": "figure",
+      "title": "できたアプリを開く",
+      "image": "../screenshots/app-overview.png",
+      "notes": "Chromeで実際の生成HTMLを開いた画面。架空の8件。ファイルを開く方法はREADME参照。画面が出たことと操作が正しいことを分ける。",
+      "source": "Claude Code生成アプリをChromeで操作 / 架空データ"
+    },
+    {
+      "type": "figure",
+      "title": "検索で、必要な1件を探す",
+      "image": "../screenshots/app-search.png",
+      "notes": "会社名「そら」で検索しR01の1件になることを確認。検索を消せば8件に戻る。",
+      "source": "Chrome実操作・2026-10-29 / 架空データ"
+    },
+    {
+      "type": "figure",
+      "title": "状態変更が、再読込後も残る",
+      "image": "../screenshots/app-persist.png",
+      "notes": "R03を完了に変更→再読み込み→期限超過0件を確認。その後は教材リセットで初期データへ戻す。",
+      "source": "Chrome実操作・2026-10-29 / 架空データ"
+    },
+    {
+      "type": "say",
+      "text": "「できました」の次に\n[[自分でも操作する]]",
+      "label": "",
+      "sub": "",
+      "dark": true,
+      "notes": "AIが書いた検証記録をそのまま信用せず、最重要の流れを手で動かす。今回の検索・状態変更・再読込・リセットを受講者が追試できる。"
+    },
+    {
+      "type": "work",
+      "title": "自分の仕事に、ひとつ寄せる",
+      "steps": [
+        "管理したい仕事をひとつ決める",
+        "追加する項目をひとつ依頼する",
+        "追加した項目を実際に操作する"
+      ],
+      "time": "7",
+      "unit": "分",
+      "mode": "個人ワーク",
+      "notes": "7分。例は「担当者」「次にすること」。最初から全部盛りにしない。完成条件をひとつ増やす。"
+    },
+    {
+      "type": "section",
+      "text": "業務で活用する",
+      "notes": ""
+    },
+    {
+      "type": "section",
+      "text": "Skillsで業務を自動化する",
+      "notes": ""
+    },
+    {
+      "type": "say",
+      "text": "毎回のやり方を\n[[SKILL.mdに残す]]",
+      "label": "ポイント",
+      "sub": "",
+      "dark": false,
+      "notes": "スキルは繰り返す手順の説明書。設定しただけで時刻通りに自動起動するものではありません。定期実行は別の仕組み。",
+      "source": "S04 / Claude Code Docs"
+    },
+    {
+      "type": "table",
+      "title": "約束と手順を、置き分ける",
+      "headers": [
+        "ファイル",
+        "役割"
+      ],
+      "rows": [
+        [
+          "CLAUDE.md",
+          "その作業場所で守る約束"
+        ],
+        [
+          "SKILL.md",
+          "必要なときに使う手順"
+        ]
+      ],
+      "font_size": 25,
+      "notes": "教材ルートのCLAUDE.mdには原本保持・出力先。プロジェクト内 .claude/skills/course-daily-report/SKILL.md に日報の手順。個人の全プロジェクトで使う場合の配置は公式資料を参照。ユーザー環境の個人Skillは~/.agents/skillsに統一。",
+      "source": "S04 / Claude Code Docs"
+    },
+    {
+      "type": "figure",
+      "title": "配布したSkillを呼び出す",
+      "image": "../screenshots/skill-menu.png",
+      "notes": "実際に/course-daily-reportを入力した画面の切り出し。このコマンドを送信して日報が生成された。見えない場合は教材ルートを選んだ新規セッションで開く。",
+      "source": "Claude Code実画面・2026-10-29"
+    },
+    {
+      "type": "prompt1",
+      "title": "Skillsで業務を自動化する",
+      "text": "/course-daily-report",
+      "label": "実際に送信したプロンプト",
+      "notes": "配布Skillを直接呼び出す。activity.csvを読み、output/daily-report.mdを作成。"
+    },
+    {
+      "type": "say",
+      "text": "手順の品質は\n[[結果で確かめる]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "スキルは正解保証ではありません。日報なら「下書き」を「送信済み」にしていないか、「予定」を「実施済み」にしていないかで確認。"
+    },
+    {
+      "type": "section",
+      "text": "MCPでGoogle・\nNotionと連携する",
+      "notes": ""
+    },
+    {
+      "type": "flow",
+      "title": "MCPは、外の道具につなぐ仕組み",
+      "nodes": [
+        {
+          "label": "Claude Code",
+          "tone": ""
+        },
+        {
+          "label": "MCP",
+          "tone": ""
+        },
+        {
+          "label": "Google・Notion",
+          "tone": "strong"
+        }
+      ],
+      "notes": "MCP＝Model Context Protocol。接続先ごとに用意された道具を呼び出すための共通の仕組み。全サービスが同じ機能を持つわけではない。",
+      "source": "S05・S06 / 公式資料"
+    },
+    {
+      "type": "figure",
+      "title": "使えるコネクタを確認する",
+      "image": "../screenshots/connectors.png",
+      "notes": "Desktopのコネクタ画面。接続一覧にあることと、認証が通り実データにアクセスできることは別。",
+      "source": "Claude Code実画面・2026-10-29"
+    },
+    {
+      "type": "say",
+      "text": "Googleは\n[[使うサービスを選ぶ]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "Gmail・Calendar・Driveは接続先や使える道具が異なる。Googleという1個の権限で全部の操作ができると説明しない。＋→コネクタ→対象サービス→アカウントと権限の確認。Google側で2段階認証や組織管理者の許可が必要な場合がある。",
+      "source": "S01・S05 / 公式資料"
+    },
+    {
+      "type": "say",
+      "text": "Notionは\n[[接続する範囲を確認]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "公式Notion MCPから接続。アカウントが閲覧できる内容や組織ポリシーに従う。既存接続を実際に読み取れるかは独立に確認。広いワークスペースの内容を配布教材へ転記しない。",
+      "source": "S06 / Notion Help"
+    },
+    {
+      "type": "prompt1",
+      "title": "MCPでGoogle・Notionと連携する",
+      "text": "GoogleとNotionの接続状態を確認してください。\n使える道具と、認証が必要な道具を分けてください。",
+      "label": "演習用プロンプト",
+      "notes": "演習用。接続確認ができてもGoogleのサービスごとの権限は異なる。この講座の接続試験結果は講師ノートとverification.mdを参照。"
+    },
+    {
+      "type": "figure",
+      "title": "接続の可否も、結果として残す",
+      "image": "../screenshots/mcp-result.png",
+      "notes": "GmailとGoogle Calendarで教材語句を各1回検索し、いずれも成功・0件。DriveとNotionは接続がなく未実施。画面は結果ファイルの閲覧用ページ。受講者の環境によって違う。",
+      "source": "Claude Code接続試験の記録を表示 / 2026-10-29"
+    },
+    {
+      "type": "prompt1",
+      "title": "外部連携の演習",
+      "text": "指定した会議メモを読み、\n担当者・期限・次の対応を表にしてください。",
+      "label": "演習用プロンプト",
+      "notes": "接続済みの自分の練習ページを指定する。未接続ならstarter/03-report/activity.csvを使って同じ出力形式を練習。外部への作成・送信は、完成内容と対象先を確認してから。"
+    },
+    {
+      "type": "say",
+      "text": "外部に書き込む前に\n[[下書きを確認する]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "「検索できる」と「更新できる」は違う。今回は教材のローカル出力まで。実業務では送信先、ページ、権限、本文を確認してから実行する。"
+    },
+    {
+      "type": "section",
+      "text": "PC内の履歴から日報を作る",
+      "notes": ""
+    },
+    {
+      "type": "say",
+      "text": "履歴を使うには\n[[記録された材料が必要]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "Claude CodeがPCの過去を自動で全部知るわけではない。会話ログ、保存済みファイル、日報用に書き出した活動履歴などを材料として渡す。録画や常時監視の導入はこの演習に含まない。"
+    },
+    {
+      "type": "figure",
+      "title": "予定と実績を分けた日報",
+      "image": "../screenshots/daily-result.png",
+      "notes": "配布Skillから生成した実際の日報。E01予定、E03下書き、E04ローカルテスト、E05ログイン画面閲覧の区別を見る。",
+      "source": "Claude Code生成日報の閲覧ページ / 架空履歴"
+    },
+    {
+      "type": "say",
+      "text": "予定を見つけても\n[[実施済みとは書かない]]",
+      "label": "",
+      "sub": "",
+      "dark": false,
+      "notes": "E01はカレンダーに予定があるだけ。E03のメールは下書きで、送信済みではありません。確認できる根拠がない場合は未確認と書く。"
+    },
+    {
+      "type": "work",
+      "title": "日報の「言い過ぎ」を見つける",
+      "steps": [
+        "日報の各行の根拠IDを見る",
+        "下書きと送信済みを照合する",
+        "次にすることをひとつ選ぶ"
+      ],
+      "time": "3",
+      "unit": "分",
+      "mode": "個人ワーク",
+      "notes": "3分。E02保存・E07目視済み保存・E08送信記録という状態の違いを確認。"
+    },
+    {
+      "type": "section",
+      "text": "Team Agentで並列に\n深く調べる",
+      "notes": "元のカリキュラム見出しを保持。この実環境で動かせたのは名前付きサブエージェント。Agent TeamsはCLIの実験的な別機能で、この検証環境では専用ツールが提供されませんでした。"
+    },
+    {
+      "type": "table",
+      "title": "違う観点を、別の担当に任せる",
+      "headers": [
+        "担当",
+        "独立して調べること"
+      ],
+      "rows": [
+        [
+          "運用担当",
+          "使える機能と未確認事項"
+        ],
+        [
+          "費用担当",
+          "費用と予算の条件"
+        ]
+      ],
+      "font_size": 25,
+      "notes": "独立して並列に調べ、相互レビューの後にメインが統合。同じファイルを同時に編集せず、ops.mdとcost.mdを分ける。"
+    },
+    {
+      "type": "prompt1",
+      "title": "並列に深く調べる",
+      "text": "演習06を運用担当と費用担当で調べ、\n互いの見落としを指摘してから統合してください。",
+      "label": "演習用プロンプト",
+      "notes": "演習用短縮版。実測ではCLIに名前付きサブエージェントを起動させ、相互指摘はリードから依頼した。実際の長いプロンプトはprompts.mdとevidenceの概要に収録。"
+    },
+    {
+      "type": "figure",
+      "title": "別の担当が、見落としを拾った",
+      "image": "../screenshots/team-result.png",
+      "notes": "Aは初年度39万円で予算の解釈が必要。Bは上位プラン価格が不明。費用担当から運用担当へ予算条件の見落とし、運用担当から費用担当へ料金方式の仮定を指摘。",
+      "source": "Claude Code実測 / サブエージェントによる相互レビュー"
+    },
+    {
+      "type": "table",
+      "title": "今回の実演と、Agent Teamsを区別する",
+      "headers": [
+        "仕組み",
+        "今回の状態"
+      ],
+      "rows": [
+        [
+          "サブエージェント",
+          "2担当と相互レビューを実行"
+        ],
+        [
+          "Agent Teams",
+          "専用ツールが出ず、未実演"
+        ]
+      ],
+      "font_size": 25,
+      "notes": "Agent Teamsを使ったと誤認させない。公式設定方法と再試行手順は上級編。単なる3役ロールプレイとも区別し、実際のAgent起動ログで確認した。",
+      "source": "S07 / CLI 2.1.308で2026-10-29検証"
+    },
+    {
+      "type": "say",
+      "text": "任せる範囲と\n[[確認する基準を決める]]",
+      "label": "",
+      "sub": "",
+      "dark": true,
+      "notes": "フォルダー整理でもアプリでも日報でも同じ。材料・出力先・合格条件を残すと、自分の業務に移せる。"
+    },
+    {
+      "type": "section",
+      "text": "明日の仕事をひとつ、\nClaude Codeに頼んでみよう",
+      "notes": ""
+    },
+    {
+      "type": "closing",
+      "title": "ありがとうございました",
+      "sub": "続きは「上級・業務設計編」へ",
+      "next": "配布教材：GitHubのREADMEから",
+      "notes": "配布リポジトリのREADMEへ案内。上級編では照合、計測の定義、独立レビューに進む。"
+    }
+  ]
+}

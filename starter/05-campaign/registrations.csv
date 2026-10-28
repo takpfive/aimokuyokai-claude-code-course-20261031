@@ -1,0 +1,9 @@
+﻿registration_id,recipient_id,last_click_send_id,status
+J01,U01,S01,active
+J02,U02,S02,active
+J03,U11,S11,active
+J04,U12,S12,active
+J05,U13,S13,cancelled
+J06,U14,,active
+J07,U99,,active
+J08,U01,S01,active
