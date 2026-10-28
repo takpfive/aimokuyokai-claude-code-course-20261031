@@ -39,4 +39,4 @@ python3 output/05-campaign/campaign.py
 python3 verify.py
 ```
 
-スライドはMicrosoft PowerPointでPDFを書き出し、全ページを画像にして目視確認。機械チェックはFAIL 0。本文は編集可能で、画面の切り出しは画像です。
+スライドはMicrosoft PowerPointでPDFを書き出し、全ページを画像にして目視確認。機械チェックはFAIL 0。GitHubから新規cloneした教材で照合・分析スクリプトとverify.pyを実行し、全チェック通過。本文は編集可能で、画面の切り出しは画像です。

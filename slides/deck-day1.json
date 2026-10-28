@@ -240,7 +240,7 @@
       "title": "コピーと対応表を確認する",
       "image": "../screenshots/folder-result.png",
       "notes": "配布CSVを閲覧用ページで表示。対応表は元パス・新パス・ハッシュ・判定・理由。コピーができたという文章だけで終えず、ファイルと件数を照合する。",
-      "source": "Claude Code実画面・2026-10-29 / 架空教材"
+      "source": "Claude Code出力CSVの閲覧ページ / 架空データ"
     },
     {
       "type": "work",
@@ -608,7 +608,8 @@
       "title": "ありがとうございました",
       "sub": "続きは「上級・業務設計編」へ",
       "next": "配布教材：GitHubのREADMEから",
-      "notes": "配布リポジトリのREADMEへ案内。上級編では照合、計測の定義、独立レビューに進む。"
+      "notes": "配布リポジトリのREADMEへ案内。上級編では照合、計測の定義、独立レビューに進む。\n配布教材：https://github.com/takpfive/aimokuyokai-claude-code-course-20261031",
+      "url": "https://github.com/takpfive/aimokuyokai-claude-code-course-20261031"
     }
   ]
 }

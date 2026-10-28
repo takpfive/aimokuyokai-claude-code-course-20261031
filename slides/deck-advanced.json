@@ -541,7 +541,8 @@
       "title": "ありがとうございました",
       "sub": "自分の業務で、ひとつ再現してみよう",
       "next": "配布教材：README → 演習 → 検証",
-      "notes": "GitHub教材から原本・実行例・期待値・出典・検証手順を案内。"
+      "notes": "GitHub教材から原本・実行例・期待値・出典・検証手順を案内。\n配布教材：https://github.com/takpfive/aimokuyokai-claude-code-course-20261031",
+      "url": "https://github.com/takpfive/aimokuyokai-claude-code-course-20261031"
     }
   ]
 }
